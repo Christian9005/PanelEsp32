@@ -13,6 +13,10 @@ const Slider = () => {
         updateSpeed(sliderValue);
     };
 
+    const handleSliderTouchEnd = () => {
+        updateSpeed(sliderValue);
+    };
+
     const updateSpeed = (newSpeed: number) => {
         const motorId = 2;
         const apiUrl = `https://apimotorfila-production-9864.up.railway.app/api/Motor/${motorId}`;
@@ -42,6 +46,7 @@ const Slider = () => {
                 value={sliderValue}
                 onChange={handleSliderChange}
                 onMouseUp={handleSliderMouseUp}
+                onTouchEnd={handleSliderTouchEnd}
                 className="slider"
             />
         </div>

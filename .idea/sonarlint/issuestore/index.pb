@@ -13,7 +13,5 @@ T
 $src/components/atoms/alert/alert.tsx,e\0\e0f875a7c6c64c5753e5ab62a83c4165c81d8fde
 Z
 *src/components/pages/mainpage/mainpage.tsx,9\9\9931589816ab961853fb126736ce032dfee141b7
-;
-src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4
 <
 src/App.scss,b\c\bcada58bc91793cb9a75454562c527c157dc0cd9

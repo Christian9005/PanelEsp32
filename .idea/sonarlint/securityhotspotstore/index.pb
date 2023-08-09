@@ -15,5 +15,3 @@ W
 'src/components/atoms/slider/slider.scss,2\6\26f26ed310596c354081f214ba6168b2740a26e9
 <
 src/App.scss,b\c\bcada58bc91793cb9a75454562c527c157dc0cd9
-;
-src/App.tsx,8\3\835da56f32df714aaed6285a5b7fc3a7807851e4

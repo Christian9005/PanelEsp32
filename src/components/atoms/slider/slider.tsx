@@ -1,7 +1,12 @@
-import React, {useState} from 'react';
+import React, {forwardRef, useImperativeHandle, useState} from 'react';
 import "./slider.scss";
 import axios from "axios";
-const Slider = () => {
+export interface SliderRef {
+    setSliderValue: (newValue: number) => void;
+    getSliderValue: () => number;
+}
+
+const Slider = forwardRef<SliderRef>((props, ref)=> {
     const [sliderValue, setSliderValue] = useState<number>(50);
 
     const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,8 +41,19 @@ const Slider = () => {
             });
     };
 
+    const isMotorStopped = sliderValue ===0;
+
+    useImperativeHandle(ref, () => ({
+        setSliderValue: (newValue: number) => {
+            setSliderValue(newValue);
+        },
+        getSliderValue: () => {
+            return sliderValue;
+        }
+    }));
+
     return (
-        <div className="slider-container">
+        <div className={`slider-container ${isMotorStopped ? 'motor-stopped' : ''}`}>
             <h2>Velocidad del motor al {sliderValue}%</h2>
             <input
                 type="range"
@@ -49,8 +65,11 @@ const Slider = () => {
                 onTouchEnd={handleSliderTouchEnd}
                 className="slider"
             />
+            {isMotorStopped && (
+                <h2 className="motor-stopped-text">Motor detenido</h2>
+            )}
         </div>
     );
-};
+});
 
 export default Slider;

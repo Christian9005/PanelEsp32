@@ -1,14 +1,35 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import Meter from "../../atoms/meter/meter";
-import Slider from "../../atoms/slider/slider";
+import Slider, {SliderRef} from "../../atoms/slider/slider";
 import "./mainpage.scss";
+import Button from "../../atoms/button/button";
 
 const Mainpage = () => {
+    const sliderRef = useRef<SliderRef | null>(null);
+
+    const stopMotor = () => {
+        if (sliderRef.current) {
+            sliderRef.current.setSliderValue(0);
+        }
+    }
+
+    const getSliderValue = () => {
+        if (sliderRef.current) {
+            return sliderRef.current.getSliderValue();
+        }
+        return 0;
+    }
+
     return (
         <div className="main-page">
-            <h1>Proyecto de Titulación</h1>
+            <h1 className="title">Proyecto de Titulación</h1>
+            <h2 className="subtitle">Elaborado por Edwin Anrango</h2>
             <Meter/>
-            <Slider/>
+            <Slider ref={sliderRef}/>
+            <div className="buttons-container">
+                <Button text="Parar Motor" variant="stop" size="tall" onClick={stopMotor}/>
+                <Button text="Continuar Proceso" variant="continue" size="tall" onClick={getSliderValue}/>
+            </div>
         </div>
     );
 };

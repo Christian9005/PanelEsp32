@@ -22,7 +22,7 @@ const Mainpage = () => {
 
     return (
         <div className="main-page">
-            <img src={logoU}/>
+            <img src={logoU} alt="imageLogo"/>
             <h1 className="title">Proyecto de Titulación</h1>
             <h2 className="subtitle">Elaborado por Edwin Anrango</h2>
             <Meter/>

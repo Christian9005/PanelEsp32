@@ -13,13 +13,6 @@ const Mainpage = () => {
         }
     }
 
-    const getSliderValue = () => {
-        if (sliderRef.current) {
-            return sliderRef.current.getSliderValue();
-        }
-        return 0;
-    }
-
     return (
         <div className="main-page">
             <img src={logoU} alt="imageLogo"/>
@@ -29,7 +22,6 @@ const Mainpage = () => {
             <Slider ref={sliderRef}/>
             <div className="buttons-container">
                 <Button text="Parar Motor" variant="stop" size="tall" onClick={stopMotor}/>
-                <Button text="Continuar Proceso" variant="continue" size="tall" onClick={getSliderValue}/>
             </div>
         </div>
     );

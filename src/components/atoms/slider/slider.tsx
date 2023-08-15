@@ -42,7 +42,7 @@ const Slider = forwardRef<SliderRef>((props, ref)=> {
     };
 
     const isMotorStopped = sliderValue ===0;
-    if (!isMotorStopped) {
+    if (isMotorStopped) {
         updateSpeed(0);
     }
 

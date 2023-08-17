@@ -2,9 +2,10 @@
   margin: 20px auto;
   text-align: center;
   color: #edf2f4;
+  font-size: 20px;
   background-color: #4CAF50;
   width: 500px;
-  height: 120px;
+  height: 150px;
   border-radius: 6px;
   padding: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0.2, 0.1);
@@ -14,41 +15,44 @@
   }
 
   .motor-stopped-text {
-    color: #EB0A00;
-    font-weight: bold;
+    font-size: 30px;
   }
 
-  .slider {
-    width: 60%;
-    height: 40px;
-    border-radius: 12px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.65;
-    transition: opacity 0.2s;
+  .slider-track {
+    width: 100%;
+    height: 300px;
 
-    &:hover {
-      opacity: 1;
-    }
-
-    &::-webkit-slider-thumb {
-      appearance: none;
-      width: 50px;
+    .slider {
+      width: 70%;
       height: 50px;
-      border-radius: 75%;
-      background: #4CAF50;
-      cursor: pointer;
-    }
+      border-radius: 12px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.65;
+      transition: opacity 0.2s;
 
-    &::-moz-range-thumb {
-      appearance: none;
-      width: 30px;
-      height: 30px;
-      border-radius: 70%;
-      background: #4CAF50;
-      cursor: pointer;
-    }
+      &:hover {
+        opacity: 1;
+      }
 
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+      }
+
+      &::-moz-range-thumb {
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+      }
+
+    }
   }
-
 }

@@ -15,13 +15,17 @@ const Mainpage = () => {
 
     return (
         <div className="main-page">
-            <img src={logoU} alt="imageLogo"/>
-            <h1 className="title">Proyecto de Titulación</h1>
-            <h2 className="subtitle">Elaborado por Edwin Anrango</h2>
-            <Meter/>
-            <Slider ref={sliderRef}/>
-            <div className="buttons-container">
-                <Button text="Parar Motor" variant="stop" size="tall" onClick={stopMotor}/>
+            <div>
+                <img src={logoU} alt="imageLogo"/>
+                <h1 className="title">Proyecto de Titulación</h1>
+                <h2 className="subtitle">Elaborado por Edwin Anrango</h2>
+            </div>
+            <div>
+                <Meter/>
+                <Slider ref={sliderRef}/>
+                <div className="buttons-container">
+                    <Button text="Parar Motor" variant="stop" size="tall" onClick={stopMotor}/>
+                </div>
             </div>
         </div>
     );

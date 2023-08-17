@@ -38,7 +38,7 @@ const Meter = () => {
 
     return (
         <div className="meter">
-            <h2>Metros almacenados {motorData?.meter}[m]</h2>
+            <h2>Metros almacenados {motorData?.meter.toFixed(3)}[m]</h2>
             {showFloatingAlert && <Alert message="Colocar Material" />}
         </div>
     );
